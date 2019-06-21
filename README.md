@@ -22,9 +22,21 @@ In this challenge, you are to build the Smurfs village once again, only this tim
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
-- [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
-- [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
-- [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+- [x] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+  Actions Creators receive events from our View/UI and export an action type. Reducers receive these action types and determine what to include or remove from the current state tree. They create a new state tree and pass it to our Store. The Store is the single source of truth and holds our state Tree. These properties on state determine what we are able to pass to our components and render in our app.
+
+- [x] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+  Application state is our immutable source of truth. The state that is held within our store.
+  Component state is state that is held within a child component and accessible to children.
+
+  We use application state to update and view data in our UI. We are only able to update this through our action creators creating clones of our state tree and adding or removing data from that clone before our reducers send it up.
+  A good time to utilize component state is when we need to alter or access a specific portion of the state tree with new data. If there is a component that we need a user to input new data into, or a component that needs to render a specific set of state from store we can utilize our component state to allow our action to access dynamic data from within our app.
+
+- [x] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+  redux-thunk allows us to use action creators that return a function instead of an action. We would error out otherwise since the reducers are expecting an action object from our action creators. This also allows us to pass dispatch and enables us to utitlize asynchronyous api calls within our synchronous redux app.
 
 ## Project Set Up
 
@@ -80,9 +92,9 @@ return dispatch => {
 ```js
 [
   {
-    name: 'Brainey',
+    name: "Brainey",
     age: 200,
-    height: '5cm',
+    height: "5cm",
     id: 0
   }
 ];
@@ -113,15 +125,15 @@ Example of object created in Smurf DB:
 ```js
 [
   {
-    name: 'Brainey',
+    name: "Brainey",
     age: 200,
-    height: '5cm',
+    height: "5cm",
     id: 0
   },
   {
-    name: 'Sleepy',
+    name: "Sleepy",
     age: 200,
-    height: '5cm',
+    height: "5cm",
     id: 1
   }
 ];
@@ -173,9 +185,9 @@ Example:
 ```js
 output: [
   {
-    name: 'Sleepy',
+    name: "Sleepy",
     age: 200,
-    height: '5cm',
+    height: "5cm",
     id: 1
   }
 ];
