@@ -3,6 +3,13 @@
   Be sure to export each action type so you can pull it into your reducer
 */
 
+export const FETCH_SMURFS_START = "FETCH_SMURFS_START";
+export const FETCH_SMURFS_SUCCESS = "FETCH_SMURFS_SUCCESS";
+export const FETCH_SMURFS_FAILURE = "FETCH_SMURFS_FAILURE";
+
+export const ADD_SMURF = "ADD_SMURF";
+export const ADD_SMURF_FAILURE = "ADD_SMURF_FAILURE";
+
 /*
   For this project you'll need at least 2 action creators for the main portion,
    and 2 more for the stretch problem.
