@@ -24,6 +24,7 @@ export const ADD_SMURF_FAILURE = "ADD_SMURF_FAILURE";
 */
 
 export const getSmurfs = smurfs => dispatch => {
+  console.log("hello");
   dispatch({ type: FETCH_SMURFS_START });
   axios
     .get("http://localhost:3333/smurfs")
