@@ -20,7 +20,7 @@ const initialState = {
   error: null
 };
 
-export const reducer = (state = initalState, action) => {
+export const reducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_SMURFS_START:
       return {
